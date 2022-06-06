@@ -1,5 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { SecurityService } from '../security/security.service';
+import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'eternal-header',
@@ -19,3 +22,10 @@ export class HeaderComponent {
     this.userService.signIn();
   }
 }
+
+@NgModule({
+  declarations: [HeaderComponent],
+  exports: [HeaderComponent],
+  imports: [CommonModule, RouterModule, MatButtonModule],
+})
+export class HeaderComponentModule {}

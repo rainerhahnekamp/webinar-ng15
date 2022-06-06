@@ -1,9 +1,14 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { NonNullableFormBuilder } from '@angular/forms';
+import { Component, Input, NgModule, OnInit } from '@angular/core';
+import { NonNullableFormBuilder, ReactiveFormsModule } from '@angular/forms';
 import { Observable, Subject } from 'rxjs';
 import { map, switchMap } from 'rxjs/operators';
 import { AddressLookuper } from '../services/address-lookuper.service';
 import { noNull } from '../../no-null';
+import { CommonModule } from '@angular/common';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input';
 
 @Component({
   selector: 'eternal-request-info',
@@ -41,3 +46,17 @@ export class RequestInfoComponent implements OnInit {
     this.submitter$.next();
   }
 }
+
+@NgModule({
+  declarations: [RequestInfoComponent],
+  exports: [RequestInfoComponent],
+  imports: [
+    CommonModule,
+    ReactiveFormsModule,
+    MatFormFieldModule,
+    MatIconModule,
+    MatButtonModule,
+    MatInputModule,
+  ],
+})
+export class RequestInfoComponentModule {}

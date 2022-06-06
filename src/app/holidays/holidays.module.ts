@@ -1,16 +1,20 @@
 // SAM4SC:MCAM
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { HolidaysComponent } from './holidays/holidays.component';
-import { RequestInfoComponent } from './request-info/request-info.component';
+import {
+  HolidaysComponent,
+  HolidaysComponentModule,
+} from './holidays/holidays.component';
+import {
+  RequestInfoComponent,
+  RequestInfoComponentModule,
+} from './request-info/request-info.component';
 import { HolidaysDataGuard } from './services/holidays-data.guard';
 import { StoreModule } from '@ngrx/store';
 import { holidaysFeature } from './+state/holidays.reducer';
 import { EffectsModule } from '@ngrx/effects';
 import { HolidaysEffects } from './+state/holidays.effects';
 import { CommonModule } from '@angular/common';
-import { HolidaysComponentModule } from './holidays/holidays.component.module';
-import { RequestInfoComponentModule } from './request-info/request-info.component.module';
 
 @NgModule({
   imports: [

@@ -1,5 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { SecurityService } from '../security/security.service';
+import { CommonModule } from '@angular/common';
+import { MatButtonModule } from '@angular/material/button';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'eternal-sidemenu',
@@ -12,3 +15,10 @@ export class SidemenuComponent {
 
   constructor(private securityService: SecurityService) {}
 }
+
+@NgModule({
+  declarations: [SidemenuComponent],
+  exports: [SidemenuComponent],
+  imports: [CommonModule, MatButtonModule, RouterModule],
+})
+export class SidemenuComponentModule {}

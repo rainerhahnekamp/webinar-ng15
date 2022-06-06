@@ -2,13 +2,12 @@ import { LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
+import { AppComponent, AppComponentModule } from './app.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { SecurityModule } from './security/security.module';
 import { HttpClientModule } from '@angular/common/http';
 import { MatButtonModule } from '@angular/material/button';
 import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
@@ -16,7 +15,7 @@ import { MAT_DATE_LOCALE } from '@angular/material/core';
 import de from 'date-fns/locale/de';
 import { registerLocaleData } from '@angular/common';
 import localeDe from '@angular/common/locales/de-AT';
-import { AppComponentModule } from './app.component.module';
+import { SignUpComponentModule } from './security/sign-up/sign-up.component';
 
 registerLocaleData(localeDe, 'de-AT');
 
@@ -30,7 +29,7 @@ registerLocaleData(localeDe, 'de-AT');
     MatToolbarModule,
     MatButtonModule,
     MatSidenavModule,
-    SecurityModule,
+    SignUpComponentModule,
     StoreModule.forRoot({}),
     EffectsModule.forRoot([]),
   ],
