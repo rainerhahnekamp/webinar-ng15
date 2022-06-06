@@ -1,10 +1,9 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { Routes } from '@angular/router';
 import { HomeComponent } from './home.component';
 import { UserLoaderGuard } from './security/user-loader.guard';
 import { SignUpComponent } from './security/sign-up/sign-up.component';
 
-const routes: Routes = [
+export const routes: Routes = [
   {
     path: '',
     canActivate: [UserLoaderGuard],
@@ -18,16 +17,8 @@ const routes: Routes = [
       {
         path: 'holidays',
         loadChildren: () =>
-          import('./holidays/holidays.module').then(
-            (esm) => esm.HolidaysModule
-          ),
+          import('./holidays/holidays.routes').then((m) => m.holidayRoutes),
       },
     ],
   },
 ];
-
-@NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule],
-})
-export class AppRoutingModule {}
