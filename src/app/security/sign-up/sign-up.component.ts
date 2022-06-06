@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
+import { Component } from "@angular/core";
+import { NonNullableFormBuilder, Validators } from "@angular/forms";
 
 @Component({
   selector: 'app-sign-up',
@@ -16,5 +16,6 @@ export class SignUpComponent {
     terms: [false],
   });
 
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: NonNullableFormBuilder) {
+  }
 }

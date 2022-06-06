@@ -1,16 +1,17 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { NonNullableFormBuilder } from '@angular/forms';
 import { Observable, Subject } from 'rxjs';
 import { map, switchMap } from 'rxjs/operators';
 import { AddressLookuper } from '../services/address-lookuper.service';
+import { noNull } from '../../no-null';
 
 @Component({
   selector: 'eternal-request-info',
   templateUrl: './request-info.component.html',
 })
 export class RequestInfoComponent implements OnInit {
-  formGroup: FormGroup = this.formBuilder.group({
-    address: [],
+  formGroup = this.formBuilder.group({
+    address: [''],
   });
   title = 'Request More Information';
   @Input() address = '';
@@ -18,7 +19,7 @@ export class RequestInfoComponent implements OnInit {
   lookupResult$: Observable<string> | undefined;
 
   constructor(
-    private formBuilder: FormBuilder,
+    private formBuilder: NonNullableFormBuilder,
     private lookuper: AddressLookuper
   ) {}
 
@@ -28,7 +29,10 @@ export class RequestInfoComponent implements OnInit {
     }
 
     this.lookupResult$ = this.submitter$.pipe(
-      switchMap(() => this.lookuper.lookup(this.formGroup.value.address)),
+      switchMap(() => {
+        noNull(this.formGroup.value);
+        return this.lookuper.lookup(this.formGroup.value.address);
+      }),
       map((found) => (found ? 'Brochure sent' : 'Address not found'))
     );
   }
