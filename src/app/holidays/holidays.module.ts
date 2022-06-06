@@ -29,10 +29,12 @@ import { MatInputModule } from '@angular/material/input';
           {
             path: '',
             component: HolidaysComponent,
+            title: 'Holidays',
           },
           {
             path: 'request-info/:holidayId',
             component: RequestInfoComponent,
+            title: 'Request more info',
           },
         ],
       },

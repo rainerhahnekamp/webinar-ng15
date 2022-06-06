@@ -12,8 +12,9 @@ const routes: Routes = [
       {
         path: '',
         component: HomeComponent,
+        title: 'Eternal',
       },
-      { path: 'sign-up', component: SignUpComponent },
+      { path: 'sign-up', component: SignUpComponent, title: 'Sign up' },
       {
         path: 'holidays',
         loadChildren: () =>
