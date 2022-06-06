@@ -4,9 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { HeaderComponent } from './header/header.component';
 import { MatSidenavModule } from '@angular/material/sidenav';
-import { SidemenuComponent } from './sidemenu/sidemenu.component';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -18,12 +16,13 @@ import { MAT_DATE_LOCALE } from '@angular/material/core';
 import de from 'date-fns/locale/de';
 import { registerLocaleData } from '@angular/common';
 import localeDe from '@angular/common/locales/de-AT';
+import { AppComponentModule } from './app.component.module';
 
 registerLocaleData(localeDe, 'de-AT');
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, SidemenuComponent],
   imports: [
+    AppComponentModule,
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,

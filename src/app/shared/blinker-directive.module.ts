@@ -5,4 +5,4 @@ import { BlinkerDirective } from './blinker.directive';
   declarations: [BlinkerDirective],
   exports: [BlinkerDirective],
 })
-export class SharedModule {}
+export class BlinkerDirectiveModule {}
