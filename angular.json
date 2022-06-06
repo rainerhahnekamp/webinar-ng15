@@ -107,5 +107,7 @@
       }
     }
   },
-  "defaultProject": "ng-14"
+  "cli": {
+    "analytics": "224ffade-999a-4fd3-97fe-143b7e9083b5"
+  }
 }
