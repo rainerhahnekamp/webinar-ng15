@@ -1,7 +1,8 @@
-import { Directive, ElementRef, HostListener, NgModule } from '@angular/core';
+import { Directive, ElementRef, HostListener } from '@angular/core';
 
 @Directive({
   selector: '[eternalBlinker]',
+  standalone: true,
 })
 export class BlinkerDirective {
   currentColor = '';
@@ -27,9 +28,3 @@ export class BlinkerDirective {
     this.el.nativeElement.style.color = color;
   }
 }
-
-@NgModule({
-  declarations: [BlinkerDirective],
-  exports: [BlinkerDirective],
-})
-export class BlinkerDirectiveModule {}

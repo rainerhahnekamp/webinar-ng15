@@ -1,4 +1,4 @@
-import { Component, Input, NgModule, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { NonNullableFormBuilder, ReactiveFormsModule } from '@angular/forms';
 import { Observable, Subject } from 'rxjs';
 import { map, switchMap } from 'rxjs/operators';
@@ -13,6 +13,15 @@ import { MatInputModule } from '@angular/material/input';
 @Component({
   selector: 'eternal-request-info',
   templateUrl: './request-info.component.html',
+  standalone: true,
+  imports: [
+    CommonModule,
+    ReactiveFormsModule,
+    MatFormFieldModule,
+    MatIconModule,
+    MatButtonModule,
+    MatInputModule,
+  ],
 })
 export class RequestInfoComponent implements OnInit {
   formGroup = this.formBuilder.group({
@@ -46,17 +55,3 @@ export class RequestInfoComponent implements OnInit {
     this.submitter$.next();
   }
 }
-
-@NgModule({
-  declarations: [RequestInfoComponent],
-  exports: [RequestInfoComponent],
-  imports: [
-    CommonModule,
-    ReactiveFormsModule,
-    MatFormFieldModule,
-    MatIconModule,
-    MatButtonModule,
-    MatInputModule,
-  ],
-})
-export class RequestInfoComponentModule {}

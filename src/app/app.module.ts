@@ -2,7 +2,7 @@ import { LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
-import { AppComponent, AppComponentModule } from './app.component';
+import { AppComponent } from './app.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { StoreModule } from '@ngrx/store';
@@ -15,13 +15,14 @@ import { MAT_DATE_LOCALE } from '@angular/material/core';
 import de from 'date-fns/locale/de';
 import { registerLocaleData } from '@angular/common';
 import localeDe from '@angular/common/locales/de-AT';
-import { SignUpComponentModule } from './security/sign-up/sign-up.component';
+import { SignUpComponent } from './security/sign-up/sign-up.component';
+import { SecurityModule } from './security/security.module';
 
 registerLocaleData(localeDe, 'de-AT');
 
 @NgModule({
   imports: [
-    AppComponentModule,
+    AppComponent,
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
@@ -29,7 +30,8 @@ registerLocaleData(localeDe, 'de-AT');
     MatToolbarModule,
     MatButtonModule,
     MatSidenavModule,
-    SignUpComponentModule,
+    SignUpComponent,
+    SecurityModule,
     StoreModule.forRoot({}),
     EffectsModule.forRoot([]),
   ],

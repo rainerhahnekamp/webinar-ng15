@@ -1,14 +1,16 @@
-import { Component, NgModule } from '@angular/core';
+import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { fromHolidays } from '../+state/holidays.selectors';
 import * as holidaysActions from '../+state/holidays.actions';
 import { Holiday } from '../model/holiday';
 import { CommonModule } from '@angular/common';
-import { HolidayCardComponentModule } from '../holiday-card/holiday-card.component';
+import { HolidayCardComponent } from '../holiday-card/holiday-card.component';
 
 @Component({
   selector: 'eternal-holidays',
   templateUrl: './holidays.component.html',
+  standalone: true,
+  imports: [CommonModule, HolidayCardComponent],
 })
 export class HolidaysComponent {
   holidays$ = this.store.select(fromHolidays.selectHolidaysWithFavourite);
@@ -27,10 +29,3 @@ export class HolidaysComponent {
     return holiday.id;
   }
 }
-
-@NgModule({
-  declarations: [HolidaysComponent],
-  exports: [HolidaysComponent],
-  imports: [CommonModule, HolidayCardComponentModule],
-})
-export class HolidaysComponentModule {}
