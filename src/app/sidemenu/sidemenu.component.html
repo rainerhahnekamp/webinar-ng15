@@ -1,7 +1,15 @@
 <ul *ngIf="loaded$ | async">
   <li>
-    <a data-testid="btn-holidays" mat-raised-button routerLink="/holidays"
-      >Holidays</a
+    <a data-testid="btn-holidays" mat-raised-button routerLink="/unoptimized"
+      >Unoptimized</a
     >
+  </li>
+  <li>
+    <a data-testid="btn-holidays" mat-raised-button routerLink="/optimized"
+      >Optimized</a
+    >
+  </li>
+  <li>
+    <a data-testid="btn-holidays" mat-raised-button routerLink="/cdn">CDN</a>
   </li>
 </ul>

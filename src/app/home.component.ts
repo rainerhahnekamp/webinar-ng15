@@ -2,15 +2,18 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'eternal-home',
+  styles: [
+    `
+      span {
+        font-family: Consolas, monospace;
+      }
+    `,
+  ],
   template: `<h2 data-testid="greeting">Welcome to Eternal</h2>
     <p>
-      Eternal is an imaginary travel agency and is used as training application
-      for Angular developers.
-    </p>
-    <p>
-      You can click around, do whatever you want but don't expect to be able to
-      book a real holiday 😉.
+      This is a demonstration for the <span>NgOptimizedImage</span> directive,
+      introduced in Angular 14.2.
     </p> `,
-    standalone: true
+  standalone: true,
 })
 export class HomeComponent {}
