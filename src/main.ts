@@ -8,7 +8,7 @@ import de from 'date-fns/locale/de';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { routes } from './app/app.routes';
-import { RouterModule } from '@angular/router';
+import { provideRouter } from '@angular/router';
 
 if (environment.production) {
   enableProdMode();
@@ -21,11 +21,8 @@ bootstrapApplication(AppComponent, {
       provide: MAT_FORM_FIELD_DEFAULT_OPTIONS,
       useValue: { appearance: 'outline' },
     },
+    provideRouter(routes),
     { provide: MAT_DATE_LOCALE, useValue: de },
-    importProvidersFrom(
-      BrowserAnimationsModule,
-      RouterModule.forRoot(routes),
-      HttpClientModule
-    ),
+    importProvidersFrom(BrowserAnimationsModule, HttpClientModule),
   ],
 });
