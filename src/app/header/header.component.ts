@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { SecurityService } from '../security/security.service';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { MatButtonModule } from '@angular/material/button';
@@ -11,16 +10,4 @@ import { MatButtonModule } from '@angular/material/button';
   standalone: true,
   imports: [CommonModule, RouterModule, MatButtonModule],
 })
-export class HeaderComponent {
-  user$ = this.userService.getLoadedUser$();
-
-  constructor(private userService: SecurityService) {}
-
-  signOut() {
-    this.userService.signOut();
-  }
-
-  signIn() {
-    this.userService.signIn();
-  }
-}
+export class HeaderComponent {}

@@ -7,11 +7,8 @@ import { MAT_DATE_LOCALE } from '@angular/material/core';
 import de from 'date-fns/locale/de';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { SecurityModule } from './app/security/security.module';
 import { routes } from './app/app.routes';
 import { RouterModule } from '@angular/router';
-import { StoreModule } from '@ngrx/store';
-import { EffectsModule } from '@ngrx/effects';
 
 if (environment.production) {
   enableProdMode();
@@ -27,11 +24,8 @@ bootstrapApplication(AppComponent, {
     { provide: MAT_DATE_LOCALE, useValue: de },
     importProvidersFrom(
       BrowserAnimationsModule,
-      StoreModule.forRoot({}),
-      EffectsModule.forRoot([]),
       RouterModule.forRoot(routes),
-      HttpClientModule,
-      SecurityModule
+      HttpClientModule
     ),
   ],
 });
