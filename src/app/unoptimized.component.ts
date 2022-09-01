@@ -3,10 +3,11 @@ import { holidays } from './holidays.data';
 import { NgForOf } from '@angular/common';
 
 @Component({
-  template: `<div *ngFor="let holiday of holidays">
-    <h2>{{ holiday.title }}</h2>
-    <img [src]="'/assets/' + holiday.imageUrl" [alt]="holiday.title" />
-  </div>`,
+  template: `<h2>Unoptimized Version</h2>
+    <div *ngFor="let holiday of holidays">
+      <h3>{{ holiday.title }}</h3>
+      <img [src]="'/assets/' + holiday.imageUrl" [alt]="holiday.title" />
+    </div>`,
   imports: [NgForOf],
   standalone: true,
 })
