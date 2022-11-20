@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { holidays } from './holidays.data';
+import { holidays } from '../holidays.data';
 import { NgForOf } from '@angular/common';
 
 @Component({

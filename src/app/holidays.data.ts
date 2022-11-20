@@ -1,7 +1,7 @@
 export const holidays = [
   {
     id: 1,
-    title: 'Vienna / Wien',
+    title: 'Wien',
     teaser: 'Dive into the capital of the Habsburg empire',
     description:
       'With a population of almost 2 million, Vienna is the second largest German-speaking city and breathes history in every corner.',
@@ -57,7 +57,7 @@ export const holidays = [
   },
   {
     id: 5,
-    title: 'Copenhagen / København',
+    title: 'København',
     teaser: "Europe's most livable city",
     description:
       'Copenhagen is the capital of Denmark and is located on Seenland which is one of the three main Danish islands.',
@@ -71,7 +71,7 @@ export const holidays = [
   },
   {
     id: 6,
-    title: 'Shanghai / 上海市',
+    title: 'Shanghai (上海市)',
     teaser: 'East meets West',
     description:
       'Although not being the capital of China, Shanghai is a good choice to for a China voyage. It can be reached very easily.',
@@ -85,7 +85,7 @@ export const holidays = [
   },
   {
     id: 7,
-    title: 'Florence/ Firenze',
+    title: 'Firenze',
     teaser: "Michelangelo's David, da Vinci, and Chianti",
     description:
       'Birthplace of the Renaissance. Many famous artists left their mark. You can marvel at them at the Uffizi Gallery.',
@@ -125,4 +125,18 @@ export const holidays = [
     onSale: false,
     soldOut: false,
   },
+  {
+    id: 10,
+    title: 'Darmstadt',
+    teaser: 'Wissenschaftsstadt Deutschland',
+    description:
+      'Darmstadt is also called the "City of Science" and is very easy reachable. Located to the south of Frankfurt and the official capital of Hessen.',
+    imageUrl: 'darmstadt.jpg',
+    typeId: 1,
+    durationInDays: 3,
+    minCount: 5,
+    maxCount: 15,
+    onSale: false,
+    soldOut: false,
+  }
 ];

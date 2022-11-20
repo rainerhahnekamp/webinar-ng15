@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { holidays } from './holidays.data';
+import { holidays } from '../holidays.data';
 import {
   NgForOf,
   NgOptimizedImage,
@@ -11,7 +11,7 @@ import {
     <div *ngFor="let holiday of holidays; first as isFirst">
       <h3>{{ holiday.title }}</h3>
       <img
-        [rawSrc]="'/angular-14-2/' + holiday.imageUrl"
+        [ngSrc]="'/angular-14-2/' + holiday.imageUrl"
         [alt]="holiday.title"
         [priority]="isFirst ? 'priority' : 'false'"
         width="1920"
