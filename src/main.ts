@@ -2,7 +2,7 @@ import { enableProdMode, importProvidersFrom, LOCALE_ID } from '@angular/core';
 import { environment } from './environments/environment';
 import { bootstrapApplication } from '@angular/platform-browser';
 import { AppComponent } from './app/app.component';
-import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
+import { MAT_LEGACY_FORM_FIELD_DEFAULT_OPTIONS as MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/legacy-form-field';
 import { MAT_DATE_LOCALE } from '@angular/material/core';
 import de from 'date-fns/locale/de';
 import { HttpClientModule } from '@angular/common/http';
